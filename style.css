@@ -36,7 +36,6 @@ ul li{
 .header .navbar-wrapper .navbar {
     animation: navbarShow;
     animation-duration: 1s;
-    background-color: yellow;
     margin: 0 auto;
     position: relative;
     width: 80%;
@@ -271,7 +270,7 @@ ul li{
 }
 
 .footer {
-    background-color: #45220A;;
+    background-color: #45220A;
     bottom: 0;
     color: gray;
     overflow: auto;
@@ -366,6 +365,84 @@ ul li{
     cursor: pointer;
 }
 
+.navbar-toggler {
+    background-color: #b7a295;
+    bottom: 0;
+    display: none;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+.navbar-toggler .navbar-toggler-wrapper {
+    background-color: #6F4E37;
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 42px;
+}
+
+.navbar-toggler .navbar-toggler-wrapper img {
+    padding: 10px;
+    padding-top: 12px;
+    width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    * {
+        float: none;
+    }
+
+    .header .navbar-wrapper {
+        height: 0;
+        display: none;
+    }
+
+    .header .hide {
+        animation: responsiveNavbarHide;
+        animation-duration: 1s;
+        background-color: rgb(69, 34, 10, 0.9);
+        color: white;
+        display: block;
+        position: fixed;
+        height: 100%;
+        z-index: 999;
+    }
+
+    .header .show {
+        animation: responsiveNavbarShow;
+        animation-duration: 1s;
+        background-color: rgb(69, 34, 10, 0.9);
+        color: white;
+        display: block;
+        position: fixed;
+        height: 100%;
+        z-index: 999;
+    }
+
+    .header .navbar-wrapper .navbar {
+        animation: none;
+        height: 100%;
+        width: 100%;
+    }
+
+    .header .navbar-wrapper .navbar ul {
+        left: 0;
+        top: 50%;
+        transform: translatey(-50%);
+    }
+
+    .header .navbar-wrapper .navbar ul li {
+        float: none;
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+}
+
 @keyframes navbarShow {
     from { top: -78px; }
     to { top: 0; }
@@ -432,4 +509,14 @@ ul li{
 @keyframes dotChangeBackground {
     from { background-color: white; };
     to { background-color: #45220A;}
+}
+
+@keyframes responsiveNavbarShow {
+    from { height: 0; }
+    to { height: 100%; }
+}
+
+@keyframes responsiveNavbarHide {
+    from { height: 100%; }
+    to { height: 0%; }
 }
