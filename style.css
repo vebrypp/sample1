@@ -1,0 +1,424 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #6F4E37;
+}
+
+ul li{
+    list-style: none;
+}
+
+.header {
+    position: relative;
+}
+
+.header .navbar-wrapper {
+    background-color: #45220A;
+    color: lightgray;
+    position: relative;
+    height: 78px;
+    width: 100%;
+}
+
+.header .navbar-wrapper .navbar {
+    animation: navbarShow;
+    animation-duration: 1s;
+    background-color: yellow;
+    margin: 0 auto;
+    position: relative;
+    width: 80%;
+}
+
+.header .navbar-wrapper .hide {
+    animation: navbarHide;
+    animation-duration: 1s;
+    top: -78px;
+}
+
+.header .navbar ul {
+    position: absolute;
+    right: 0;
+}
+
+.header .navbar ul li {
+    float: left;
+    margin-left: 3px;
+    padding: 30px 30px;
+}
+
+.header .navbar ul li:hover {
+    cursor: pointer;
+}
+
+.header .banner {
+    color: white;
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.header .banner .banner-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.banner-one, .banner-two, .banner-three {
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.header .banner .banner-one {
+    background-image: url(img/background/1.jpg);
+    background-position-y: 100%;
+}
+
+.header .banner .banner-two {
+    background-image: url(img/background/2.jpg);
+    background-position-y: 80%;
+    left: 100%;
+}
+
+.header .banner .banner-three {
+    background-image: url(img/background/3.jpg);
+    background-position-y: 40%;
+    left: 100%;
+}
+
+.header .banner .content-left {
+    animation: slideLeft;
+    animation-duration: 1s;
+    left: -100%;
+}
+
+.header .banner .content-middle {
+    animation: slideMiddle;
+    animation-duration: 1s;
+    left: 0;
+}
+
+.header .banner .banner-content .banner-title {
+    margin-right: 50px;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 50%;
+    width: 50%;
+}
+
+.content {
+    margin: 0 auto;
+    margin-top: 50px;
+    height: 1000px;
+    width: 80%;
+}
+
+.content .content-wrapper{
+    position: absolute;
+    height: 50%;
+    width: 80%;
+    z-index: 2;
+}
+
+.content .content-wrapper .content-one, .content-two, .content-three, .content-four {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    box-shadow: 10px 10px 5px black;
+    left: 50%;
+    margin: auto;
+    margin-left: 5px;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: all 1s;
+    width: 100%;
+}
+
+.content .content-wrapper .content-one {
+    background-image: url(img/background/c1.jpg);
+    background-size: 100%;
+}
+.content .content-wrapper .content-two {
+    background-image: url(img/background/c2.jpg);
+    background-position: 50%;
+    top: 33.33%;
+}
+.content .content-wrapper .content-three {
+    background-image: url(img/background/c3.jpg);
+    background-position-y: 50%;
+    top: 66.66%;
+}
+.content .content-wrapper .content-four {
+    background-image: url(img/background/c4.jpg);
+    background-position-y: 50%;
+    top: 100%;
+}
+
+.content .content-wrapper .hide {
+    animation: contentHide 2s;
+    height: 10px;
+    width: 0;
+}
+
+.content .content-wrapper .show {
+    animation: contentShow 2s;
+    height: 100%;
+    width: 100%;
+}
+
+.content .content-wrapper .content-body {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.content .content-wrapper .content-body strong {
+    color: white;
+    font-family: Segoe Script;
+    font-style: italic;
+    position: absolute;
+    width: 100%;
+}
+
+.content .content-wrapper .content-one .content-body strong {
+    font-size: 25px;
+    margin: 20px;
+    width: 50%;
+}
+.content .content-wrapper .content-two .content-body strong {
+    bottom: 11%;
+    font-size: 24px;
+    margin: 20px;
+    right: 0;
+    text-align: right;
+    width: 69%;
+}
+
+.content .content-wrapper .content-three .content-body strong {
+    top: 10%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.content .content-wrapper .content-four .content-body strong {
+    font-size: 35px;
+    left: 30%;
+    text-align: center;
+    top: 17%;
+    width: 40%;
+}
+
+.side-navigation {
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 728px;
+    z-index: 0;
+}
+
+.side-navigation .side-navigation-line {
+    background-color: lightgray;
+    /* box-shadow: -5px 2px 10px black; */
+    height: 100%;
+    position: absolute;
+    width: 5px;
+}
+
+.side-navigation .side-navigation-dot {
+    background-color: white;
+    border: solid 10px lightgrey;
+    border-radius: 50%;
+    /* box-shadow: -5px 2px 10px black; */
+    left: 2.5px;
+    padding: 10px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.side-navigation .one{
+    top: 0px;
+}
+
+.side-navigation .two{
+    top: 33.33%;
+}
+
+.side-navigation .three{
+    top: 66.66%;
+}
+
+.side-navigation .four{
+    top: 100%;
+}
+
+.footer {
+    background-color: #45220A;;
+    bottom: 0;
+    color: gray;
+    overflow: auto;
+    position: relative;
+    width: 100%;
+}
+
+.footer .container {
+    margin: auto;
+    width: 80%;
+}
+
+.footer .container .contact{
+    border-right: solid 1px white;
+    float: left;
+    margin: 30px 0;
+    width: 50%;
+}
+
+.footer .container .contact a {
+    display: block;
+    height: 40px;
+    margin-left: 25%;
+    overflow: auto;
+    position: relative;
+    width: 50%;
+}
+
+.footer .container .contact:hover {
+    cursor: pointer;
+}
+
+.footer .container .contact a img {
+    display: block;
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+}
+
+.footer .container .contact a p {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.footer .container .copyright {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    width: 50%;
+}
+
+.footer .container .copyright p{
+    margin-left: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+}
+
+.scroll-top {
+    background-color: lightgrey;
+    border-radius: 10px;
+    bottom: 10%;
+    box-shadow: 5px 5px 10px black;
+    color: white;
+    padding: 10px 12px;
+    position: fixed;
+    right: -50px;
+}
+
+.scroll-top img {
+    width: 20px;
+}
+
+.showIcon {
+    animation: showScrollIcon;
+    animation-duration: 1s;
+    right: 20px;
+}
+
+.hideIcon {
+    animation: hideScrollIcon;
+    animation-duration: 1s;
+    right: -50px;
+}
+
+.scroll-top:hover {
+    cursor: pointer;
+}
+
+@keyframes navbarShow {
+    from { top: -78px; }
+    to { top: 0; }
+}
+
+@keyframes navbarHide {
+    from { top: 0; }
+    to { top: -78px; }
+}
+
+@keyframes slideLeft {
+    from { left: 0; }
+    to { left: -100%; }
+}
+
+@keyframes slideMiddle {
+    from { left: 100%; }
+    to { left: 0; }
+}
+
+@keyframes showScrollIcon {
+    from { right: -50px; }
+    to { right: 20px; }
+}
+@keyframes hideScrollIcon{
+    from { right: 20px; }
+    to { right: -50px; }
+}
+
+@keyframes contentHide {
+    0% {
+        width: 100%;
+        height: 100%;
+    }
+
+    50% {
+        width: 100%;
+        height: 10px;
+    }
+
+    100% {
+        width: 0;
+        height: 10px;
+    }
+}
+
+@keyframes contentShow {
+    0% {
+        width: 0;
+        height: 10px;
+    }
+
+    50% { 
+        width: 100%;
+        height: 10px;
+    }
+
+    100% {
+        width: 100%;
+        height: 100%
+    }
+}
