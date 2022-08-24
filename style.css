@@ -376,14 +376,13 @@ ul li{
 
 .navbar-toggler .navbar-toggler-wrapper {
     background-color: #6F4E37;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 0 auto;
     width: 42px;
 }
 
 .navbar-toggler .navbar-toggler-wrapper img {
     padding: 10px;
-    padding-top: 12px;
     width: 100%;
 }
 
@@ -393,49 +392,41 @@ ul li{
     }
 
     .header .navbar-wrapper {
+        background-color: rgba(69, 34, 10, 0.8);
+        color: white;
+        position: fixed;
         height: 0;
-        display: none;
+        z-index: 999;
     }
 
     .header .hide {
         animation: responsiveNavbarHide;
         animation-duration: 1s;
-        background-color: rgb(69, 34, 10, 0.9);
-        color: white;
-        display: block;
-        position: fixed;
-        height: 100%;
-        z-index: 999;
+        height: 0;
     }
 
     .header .show {
         animation: responsiveNavbarShow;
         animation-duration: 1s;
-        background-color: rgb(69, 34, 10, 0.9);
-        color: white;
-        display: block;
-        position: fixed;
         height: 100%;
-        z-index: 999;
     }
 
     .header .navbar-wrapper .navbar {
         animation: none;
-        height: 100%;
+        overflow: hidden;
         width: 100%;
+        height: 100%;
     }
 
     .header .navbar-wrapper .navbar ul {
         left: 0;
         top: 50%;
-        transform: translatey(-50%);
+        transform: translateY(-50%);
     }
 
     .header .navbar-wrapper .navbar ul li {
         float: none;
-        margin: 0;
         text-align: center;
-        width: 100%;
     }
 
     .navbar-toggler {
