@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const rect = i.getBoundingClientRect();
             const rectY = rect.top.toFixed();
 
-            if( rectY < ( windowY / 2 ) && rectY > (windowY / 2) - ( windowY / 2 / 3 ) ) {
+            if( rectY < ( (windowY - 50) / 2 ) && rectY > ( (windowY - 50) / 2 ) - ( (windowY - 50) / 2 / 3 ) ) {
                 if( i.classList.contains('active') == false ) {
                     i.classList.add('active');
                 };
