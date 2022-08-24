@@ -231,7 +231,7 @@ ul li{
 
 .side-navigation .side-navigation-line {
     background-color: lightgray;
-    /* box-shadow: -5px 2px 10px black; */
+    box-shadow: -5px 2px 10px black;
     height: 100%;
     position: absolute;
     width: 5px;
@@ -241,7 +241,7 @@ ul li{
     background-color: white;
     border: solid 10px lightgrey;
     border-radius: 50%;
-    /* box-shadow: -5px 2px 10px black; */
+    box-shadow: -5px 2px 10px black;
     left: 2.5px;
     padding: 10px;
     position: absolute;
