@@ -77,15 +77,18 @@ a {
 
 .header .banner .banner-one {
     background-image: url(img/background/1.jpg);
+    background-position-y: 100%;
 }
 
 .header .banner .banner-two {
     background-image: url(img/background/2.jpg);
+    background-position-y: 80%;
 
 }
 
 .header .banner .banner-three {
     background-image: url(img/background/3.jpg);
+    background-position-y: 37%;
 }
 
 .content {
