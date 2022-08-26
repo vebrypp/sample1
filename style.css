@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 html {
+    background-color: blanchedalmond;
     scroll-behavior: smooth;
 }
 
