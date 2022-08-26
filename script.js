@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const rect = i.getBoundingClientRect();
             const rectY = rect.top.toFixed();
 
-            if( rectY < ( (windowY - 50) / 2 ) && rectY > ( (windowY - 50) / 2 ) - ( (windowY - 50) / 2 / 3 ) ) {
+            if( rectY < ( (windowY - 50) / 3 ) && rectY > ( (windowY - 50) / 3 ) - ( (windowY - 50) / 3 / 3 ) ) {
                 if( i.classList.contains('active') == false ) {
                     i.classList.add('active');
                 };
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const rect = i.getBoundingClientRect();
             const rectY = rect.top.toFixed();
 
-            if( rectY < ( windowY / 2 ) && rectY > (windowY / 2) - ( windowY / 2 / 3 ) ) {
+            if( rectY < ( windowY / 3 ) && rectY > (windowY / 3) - ( windowY / 3 / 3 ) ) {
                 if(i.classList.contains('hide')) return (i.classList.replace('hide', 'show'));
                 i.classList.add('show');
             } else {
