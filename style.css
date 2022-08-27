@@ -208,9 +208,21 @@ a {
     bottom: 100px;
     height: 45px;
     position: fixed;
-    right: 20px;
+    right: -50px;
     width: 45px;
     z-index: 998;
+}
+
+.showIcon {
+    animation: showIcon;
+    animation-duration: 1s;
+    right: 20px;
+}
+
+.hideIcon {
+    animation: hideIcon;
+    animation-duration: 1s;
+    right: -50px;
 }
 
 .scroll-top img {
@@ -235,14 +247,52 @@ a {
 }
 
 .navbar-toggler .navbar-toggler-wrapper {
-    margin: auto;
-    width: 50px;
-}
-.navbar-toggler .navbar-toggler-wrapper img {
     display: block;
-    margin: auto;
-    padding: 10px;
-    width: 100%;
+    height: 33px;
+    margin: 5px auto;
+    position: relative;
+    width: 33px;
+}
+
+.navbar-toggler .navbar-toggler-wrapper input {
+    display: block;
+    height: 33px;
+    position: absolute;
+    width: 33px;
+    opacity: 0;
+    z-index: 2;
+}
+
+.navbar-toggler .navbar-toggler-wrapper .navbar-toggler-icon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-toggler .navbar-toggler-wrapper .navbar-toggler-icon span {
+    background-color: white;
+    border-radius: 3px;
+    display: block;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    width: 33px;
+    z-index: 1;
+    transition: all 1s;
+    transform-origin: 0% 100%;
+}
+
+.navbar-toggler .navbar-toggler-wrapper input:checked ~ .navbar-toggler-icon span {
+    transform: rotate(45deg) translate(0.5px, -4.5px);
+}
+
+.navbar-toggler .navbar-toggler-wrapper input:checked ~ .navbar-toggler-icon span:nth-child(2) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.navbar-toggler .navbar-toggler-wrapper input:checked ~ .navbar-toggler-icon span:nth-child(3) {
+    transform: rotate(-45deg) translate(2.5px, 6.5px);
 }
 
 .side-navigation {
@@ -297,12 +347,13 @@ a {
         height: 210px;
     }
 
-    .header .navbar-wrapper{
-        background-color: rgba(69, 34, 10, 0.8);
+    .header .navbar-wrapper {
+        background-color: rgb(69, 34, 10);
         display: block;
         height: 0;
         overflow: hidden;
         position: fixed;
+        bottom: 0;
         width: 100%;
         z-index: 999;
     }
@@ -336,6 +387,7 @@ a {
 
     .content .content-wrapper {
         height: 80%;
+        width: 100%;
     }
 
     .content .content-wrapper #content {
@@ -479,4 +531,14 @@ a {
 @keyframes responsiveNavbarShow {
     from { height: 0; }
     to { height: 100%;}
+}
+
+@keyframes showIcon {
+    from {right: -50px}
+    to { right: 20px;}
+}
+
+@keyframes hideIcon {
+    from {right: 20px}
+    to { right: -50px;}
 }

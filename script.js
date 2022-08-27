@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollTop = document.querySelector('.scroll-top');
     const content = document.querySelectorAll('.content .content-wrapper #content');
     const dotSideNavigation = document.querySelectorAll('.side-navigation-dot');
-    const navbarToggler =document.querySelector('.navbar-toggler-wrapper');
+    const navbarToggler =document.querySelector('.navbar-toggler-wrapper input');
     const windowY = window.innerHeight;
 
     // Scroll Event
@@ -56,10 +56,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Navbar toggler
-    navbarToggler.addEventListener('click', function() {
-        if(navbarWrapper.classList.contains('show')) return (navbarWrapper.classList.replace('show', 'hide'));
-        if(navbarWrapper.classList.contains('hide')) return (navbarWrapper.classList.replace('hide', 'show'));
-        navbarWrapper.classList.add('show');
+    navbarToggler.addEventListener('change', function() {
+        if(navbarToggler.checked) {
+            if(navbarWrapper.classList.contains('hide') == false) {
+                navbarWrapper.classList.add('show');
+            } else {
+                navbarWrapper.classList.replace('hide', 'show');
+            }
+        } else {
+            navbarWrapper.classList.replace('show', 'hide')
+        };
     });
 
     // SLide Banner
