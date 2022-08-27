@@ -29,6 +29,19 @@ a {
     width: 80%;
 }
 
+.header .navbar-wrapper .navbar {
+    animation: navbarShow;
+    animation-duration: 1s;
+    position: relative;
+    height: 78px;
+}
+
+.header .navbar-wrapper .hide {
+    animation: navbarHide;
+    animation-duration: 1s;
+    top: -78px;
+}
+
 .header .navbar-wrapper ul {
     position: absolute;
     right: 0;
@@ -480,6 +493,16 @@ a {
             width: 100%;
         }
     }
+}
+
+@keyframes navbarShow {
+    from {top: -78px;}
+    to {top: 0px;}
+}
+
+@keyframes navbarHide {
+    from {top: 0;}
+    to {top: -78};
 }
 
 @keyframes slideLeft {
