@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar');
     const bannerContent = document.querySelectorAll('.banner-content');
     const scrollTop = document.querySelector('.scroll-top');
-    const content = document.querySelectorAll('.content .content-wrapper #content');
+    const contents = document.querySelectorAll('.content .content-wrapper #content');
     const dotSideNavigation = document.querySelectorAll('.side-navigation-dot');
     const navbarToggler =document.querySelector('.navbar-toggler-wrapper input');
     const windowY = window.innerHeight;
@@ -12,32 +12,26 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('scroll', function() {
         const y = window.scrollY;
 
-        // Dot side navigation
-        dotSideNavigation.forEach(function(i) {
-            const rect = i.getBoundingClientRect();
+        // Dot content and show content
+        for(let i = 0; i < dotSideNavigation.length; i++) {
+            const rect = dotSideNavigation[i].getBoundingClientRect();
             const rectY = rect.top.toFixed();
+            const content = contents[i];
 
-            if( rectY < ( (windowY - 50) / 3 ) && rectY > ( (windowY - 50) / 3 ) - ( (windowY - 50) / 3 / 3 ) ) {
-                if( i.classList.contains('active') == false ) {
-                    i.classList.add('active');
+            if( rectY < ( windowY / 2 ) && rectY > ( windowY / 5 ) ) {
+                if( dotSideNavigation[i].classList.contains('active') == false ) {
+                    dotSideNavigation[i].classList.add('active');
+                };
+                if ( content.classList.contains('hide') ) {
+                    content.classList.replace('hide', 'show')
+                } else {
+                    content.classList.add('show');
                 };
             } else {
-                i.classList.remove('active');
+                dotSideNavigation[i].classList.remove('active');
+                content.classList.replace('show', 'hide' );
             };
-        });
-
-        // Show content
-        content.forEach(function(i) {
-            const rect = i.getBoundingClientRect();
-            const rectY = rect.top.toFixed();
-
-            if( rectY < ( windowY / 3 ) && rectY > (windowY / 3) - ( windowY / 3 / 3 ) ) {
-                if(i.classList.contains('hide')) return (i.classList.replace('hide', 'show'));
-                i.classList.add('show');
-            } else {
-                i.classList.replace('show', 'hide');
-            };
-        });
+        };
 
         // Show and hide navbar and scrolltop icon
         if( y > 0 ) {
