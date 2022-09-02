@@ -203,7 +203,7 @@ img {
 
 .content .content-wrapper #content {
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100%;
     border-radius: 3px;
     left: 50%;
     height: 50vh;
@@ -679,6 +679,10 @@ img {
     }
 
     .header .banner .banner-content {
+        background-size: 100% 100%;
+    }
+
+    .content .content-wrapper #content {
         background-size: 100% 100%;
     }
 }
