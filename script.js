@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const rectY = rect.top.toFixed();
             const content = contents[i];
 
-            if( rectY < ( windowY / 2 ) && rectY > ( windowY / 5 ) ) {
+            if( rectY < ( windowY / 2 ) && rectY > -10 ) {
                 if( dotSideNavigation[i].classList.contains('active') == false ) {
                     dotSideNavigation[i].classList.add('active');
                 };
